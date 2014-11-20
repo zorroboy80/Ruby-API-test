@@ -5,8 +5,8 @@ require 'yaml'
 # Import secrets and authenticate
 config = YAML.load_file("config.yaml")
 consumer_key = OAuth::Consumer.new(
-    config["twitter"]["consumer_key1"],
-    config["twitter"]["consumer_key2"])
+    config["twitter"]["consumer_key"],
+    config["twitter"]["consumer_secret"])
 access_token = OAuth::Token.new(
     config["twitter"]["access_token1"],
     config["twitter"]["access_token2"])
@@ -31,4 +31,3 @@ request.oauth! http, consumer_key, access_token
 # Issue the request and return the response.
 http.start
 response = http.request request
-puts "The response status was #{response.code}"
