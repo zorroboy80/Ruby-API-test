@@ -3,4 +3,4 @@ require 'oauth'
 require 'yaml'
 
 # Other scripts
-require_relative 'authenticate.rb'
+require './authenticate'
